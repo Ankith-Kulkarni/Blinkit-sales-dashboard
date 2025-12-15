@@ -132,6 +132,8 @@ item_sales = (
 fig2, ax2 = plt.subplots(figsize=(6, 6))
 
 ax2.barh(item_sales.index, item_sales.values / 1e6,color="orange")
+for spine in ax2.spines.values():
+    spine.set_visible(False)
 
 ax2.set_xlabel("Sales (in Millions)")
 ax2.set_title("ITEM TYPE")
@@ -151,6 +153,8 @@ x = np.arange(len(outlet_fat.index))
 width = 0.35
 
 fig3, ax3 = plt.subplots()
+for spine in ax3.spines.values():
+    spine.set_visible(False)
 
 ax3.barh(x - width/2, outlet_fat["Low Fat"]/1e6, width, label="Low Fat")
 ax3.barh(x + width/2, outlet_fat["Regular"]/1e6, width, label="Regular")
@@ -168,6 +172,8 @@ year_sales = (
 )
 
 fig4, ax4 = plt.subplots(figsize=(5, 3))
+for spine in ax4.spines.values():
+    spine.set_visible(False)
 ax4.plot(year_sales.index, year_sales.values, color="black", marker="o")
 ax4.fill_between(year_sales.index, year_sales.values, color="green")
 ax4.set_title("Outlet Establishment")
@@ -185,6 +191,7 @@ with right:
     st.pyplot(fig2)
     st.pyplot(fig4)
     plt.close()
+
 
 
  
