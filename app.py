@@ -192,6 +192,7 @@ with right:
     st.pyplot(fig4)
     plt.close()
 
-
+st.markdown("Dashboard created by **Ankith Kulkarni** 💛")
 
  
+
